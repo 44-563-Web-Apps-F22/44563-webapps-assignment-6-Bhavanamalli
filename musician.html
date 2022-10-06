@@ -3,6 +3,27 @@
 
 <body>
     <title>Sample java script page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"   
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" 
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <style>
+        body {
+     background-color:azure;
+   }
+   input[type=text], select {
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+
+       }
+   </style>
     <h1>Musician guess by Bhavana Malli</h1>
 
     <h2>Getting input</h2>
@@ -24,11 +45,26 @@
         <img id="image" src="mosquitoe.jpg" class="rounded mx-auto d-block" onclick="swapImage()" alt="mosquitoe"
             style="width: 100px; height : 100px;">
     </div>
+    
 
     <script>
         correct = 0
         wrong = 0
         useImage = 1
+        
+        function Guess() {
+            console.log("Getting form values")
+            age = document.getElementById("form1_age").value
+            nick = document.getElementById("form1_nick").value
+
+            out = document.getElementById("result")
+            if (age != nick) {
+                correct = correct + 1
+                alert("Sorry, game over")
+                out.innerHTML = "wrong count-" + correct
+            } 
+        }
+
 
         function checkGuess() {
             console.log("Getting form values")
